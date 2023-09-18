@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const formRoutes = require('./routes/formRoutes'); 
 const pageRoutes = require('./routes/pageRoutes'); 
 const entryRoutes = require('./routes/entryRoutes'); 
-//configuration express et le middelware
+
 const app = express();
 const port = process.env.PORT || 5000; 
 
@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/form', formRoutes);
 app.use('/page', pageRoutes);
 app.use('/entry', entryRoutes);
+app.use('/api', require('./routes/entryRoutes'));
 
-// connexion à la base de données MongoDB 
 
 mongoose.connect('mongodb://localhost:27017/myappdb', {
   useNewUrlParser: true,

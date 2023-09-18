@@ -22,8 +22,9 @@ class ManagePages extends Component {
   render() {
     return (
       <div>
-        <h2>Créer une nouvelle page</h2>
+        <h2>  Gérer une nouvelle page</h2>
         <form onSubmit={this.handleSubmit}>
+        <h3>Titre</h3>
           <div>
             <label>Titre :</label>
             <input
@@ -33,6 +34,7 @@ class ManagePages extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <h3>Description</h3>
           <div>
             <label>Description :</label>
             <textarea
@@ -41,6 +43,7 @@ class ManagePages extends Component {
               onChange={this.handleChange}
             ></textarea>
           </div>
+          <h3>URL</h3>
           <div>
             <label>URL de la page :</label>
             <input
@@ -50,7 +53,8 @@ class ManagePages extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <button type="submit">Créer la page</button>
+          <button type="submit"
+                   className="create-button" >Créer la page</button>
         </form>
       </div>
     );
